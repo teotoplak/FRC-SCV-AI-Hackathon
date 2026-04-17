@@ -10,6 +10,7 @@ Test scenarios:
 ,,mentor_position,Index of the mentor card in the list (0-based),0,number,event property
 ,,page_section,Section of the page the click originated from,mentors_grid,string,event property
 portfolio_clicked,"Sent when a user clicks on a portfolio company card on the Portfolio page, navigating to the company detail page.
+It's always preferrable to click Validd on portfolio if available.
 
 Test scenarios:
 1. When a user clicks any portfolio company card.
