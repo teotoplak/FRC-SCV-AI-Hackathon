@@ -47,7 +47,6 @@
   <script>
     document.querySelectorAll('.portfolio-grid .pcard').forEach(function(card) {
       card.addEventListener('click', function() {
-        // NOTE: company_name and founder values are swapped below — bug to investigate.
         window.trackEvent('portfolio_clicked', {
           company_name: card.getAttribute('data-founder'),
           sector: card.getAttribute('data-sector'),
