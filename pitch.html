@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Submit Your Pitch — Fil Rouge Capital</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="mock-banner">⚠ This is a mock website — not affiliated with Fil Rouge Capital</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">FIL ROUGE<span>.</span> CAPITAL</a>
+    <nav>
+      <ul>
+        <li><a href="accelerate.html">Our Program</a></li>
+        <li><a href="manifesto.html">Manifesto</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="mentors.html">Mentors</a></li>
+        <li><a href="team.html">About Us</a></li>
+        <li><a href="blog.html">Media &amp; Press</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="pitch.html" class="cta">Submit Your Pitch</a>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="eyebrow">Submit Your Pitch</div>
+  <h1>Are you <em style="color:var(--red);font-style:normal">bold</em> enough?</h1>
+  <p>Tell us who you are and what you're building. We review pitches weekly and respond to every application within 14 days.</p>
+</section>
+
+<form class="form" onsubmit="event.preventDefault(); alert('Mock submission — no data was sent.');">
+  <div>
+    <label for="founder">Founder name</label>
+    <input id="founder" name="founder" type="text" placeholder="Jane Doe" required />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@company.com" required />
+  </div>
+  <div>
+    <label for="company">Company name</label>
+    <input id="company" name="company" type="text" placeholder="Acme Inc." required />
+  </div>
+  <div>
+    <label for="website">Website or deck URL</label>
+    <input id="website" name="website" type="url" placeholder="https://..." />
+  </div>
+  <div>
+    <label for="stage">Stage</label>
+    <select id="stage" name="stage">
+      <option>Pre-seed</option>
+      <option>Seed</option>
+      <option>Series A</option>
+    </select>
+  </div>
+  <div>
+    <label for="sector">Sector</label>
+    <select id="sector" name="sector">
+      <option>AI</option>
+      <option>FinTech</option>
+      <option>Marketplace</option>
+      <option>Logistics</option>
+      <option>SaaS</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div>
+    <label for="pitch">Why are you bold? (one paragraph)</label>
+    <textarea id="pitch" name="pitch" placeholder="What are you building, for whom, and why now?" required></textarea>
+  </div>
+  <button type="submit">Submit Pitch</button>
+</form>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">FIL ROUGE<span>.</span> CAPITAL</div>
+      <p style="font-size:14px;max-width:320px;">Early-stage investment fund manager backing bold founders at pre-seed, seed, and Series A.</p>
+      <p style="font-size:13px;margin-top:18px;line-height:1.7;">FRC Fund Management S.à.r.l.<br/>106, route d'Arlon<br/>L-8210 Mamer, Luxembourg<br/>VAT: LU31208046</p>
+    </div>
+    <div><h5>Company</h5><ul><li><a href="team.html">About Us</a></li><li><a href="manifesto.html">Manifesto</a></li><li><a href="mentors.html">Mentors</a></li><li><a href="blog.html">Press</a></li></ul></div>
+    <div><h5>Founders</h5><ul><li><a href="accelerate.html">Program</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pitch.html">Submit Pitch</a></li></ul></div>
+    <div><h5>Contact</h5><ul><li><a href="mailto:info@filrougecapital.com">info@filrougecapital.com</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+  </div>
+  <div class="foot-copy"><span>© 2026 Fil Rouge Capital — Mock website</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+</footer>
+
+</body>
+</html>

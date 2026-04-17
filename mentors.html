@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mentors — Fil Rouge Capital</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="tracking.js"></script>
+</head>
+<body>
+
+<div class="mock-banner">⚠ This is a mock website — not affiliated with Fil Rouge Capital</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">FIL ROUGE<span>.</span> CAPITAL</a>
+    <nav>
+      <ul>
+        <li><a href="accelerate.html">Our Program</a></li>
+        <li><a href="manifesto.html">Manifesto</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="mentors.html" class="active">Mentors</a></li>
+        <li><a href="team.html">About Us</a></li>
+        <li><a href="blog.html">Media &amp; Press</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="pitch.html" class="cta">Submit Your Pitch</a>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="eyebrow">Mentors</div>
+  <h1>Operators in your corner.</h1>
+  <p>Founders, investors, and senior operators who've built and scaled category leaders — ready to roll up their sleeves with our portfolio companies.</p>
+</section>
+
+<section class="block" style="padding-top:20px">
+  <div class="mentors-grid">
+    <div class="mentor" onclick="openMentor(0)"><div class="avatar">AK</div><strong>Ana Kovač</strong><span>Ex-VP Product, fintech scaleup</span></div>
+    <div class="mentor" onclick="openMentor(1)"><div class="avatar">MP</div><strong>Marko Petrov</strong><span>Serial founder, 2x exits</span></div>
+    <div class="mentor" onclick="openMentor(2)"><div class="avatar">LS</div><strong>Lara Simon</strong><span>Partner, growth-stage VC</span></div>
+    <div class="mentor" onclick="openMentor(3)"><div class="avatar">DN</div><strong>Davor Novak</strong><span>CTO, AI infrastructure</span></div>
+    <div class="mentor" onclick="openMentor(4)"><div class="avatar">EK</div><strong>Elena Krause</strong><span>Head of GTM, SaaS unicorn</span></div>
+  </div>
+  <p class="section-sub" style="margin-top:32px">Showing 5 of 200+ mentors in the FRC network.</p>
+</section>
+
+<!-- Mentor modal -->
+<div class="modal-overlay" id="mentorModal" onclick="if(event.target===this)closeMentor()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeMentor()">&times;</button>
+    <h3 id="mName"></h3>
+    <div class="modal-role" id="mRole"></div>
+    <div class="modal-location" id="mLoc"></div>
+    <div class="modal-bio" id="mBio"></div>
+    <div class="modal-topics" id="mTopics"></div>
+  </div>
+</div>
+
+<script>
+var mentors = [
+  { name:"Ana Kovač", role:"Ex-VP Product, fintech scaleup", loc:"Vienna, Austria",
+    bio:"Ana spent 8 years as VP Product at a leading European fintech scaleup, taking the product from MVP to 2M+ users. She specialises in product-led growth, pricing strategy, and building product orgs from scratch.",
+    topics:["Product Strategy","PLG","Pricing","Team Building","FinTech"] },
+  { name:"Marko Petrov", role:"Serial founder, 2x exits", loc:"Zagreb, Croatia",
+    bio:"Marko has founded three companies and exited two — one via acquisition and one via secondary sale. He advises FRC portfolio founders on go-to-market, fundraising, and knowing when to pivot.",
+    topics:["Fundraising","M&A","Go-to-Market","Founder Coaching","Pivots"] },
+  { name:"Lara Simon", role:"Partner, growth-stage VC", loc:"Berlin, Germany",
+    bio:"Lara is a Partner at a top-tier European growth fund. She brings deep expertise in scaling from Series A to C, board governance, and helping founders navigate follow-on rounds.",
+    topics:["Series A–C","Governance","Investor Relations","Scaling","Board Management"] },
+  { name:"Davor Novak", role:"CTO, AI infrastructure", loc:"Ljubljana, Slovenia",
+    bio:"Davor is CTO at an AI infrastructure company processing petabytes of data daily. He mentors on technical architecture decisions, hiring engineers, and building robust ML pipelines.",
+    topics:["AI/ML","Engineering Hiring","Architecture","Data Infrastructure","DevOps"] },
+  { name:"Elena Krause", role:"Head of GTM, SaaS unicorn", loc:"Munich, Germany",
+    bio:"Elena leads go-to-market at a European SaaS unicorn. She advises early-stage founders on sales motions, pricing experiments, and building the first sales team.",
+    topics:["Sales","SaaS","GTM Strategy","Pricing","Enterprise Sales"] }
+];
+function openMentor(i) {
+  var m = mentors[i], el = document.getElementById('mentorModal');
+  window.trackEvent('mentor_clicked', {
+    mentor_name: m.name,
+    mentor_role: m.role,
+    mentor_location: m.loc,
+    mentor_position: i,
+    page_section: 'mentors_grid'
+  });
+  document.getElementById('mName').textContent = m.name;
+  document.getElementById('mRole').textContent = m.role;
+  document.getElementById('mLoc').textContent = m.loc;
+  document.getElementById('mBio').textContent = m.bio;
+  var tp = document.getElementById('mTopics'); tp.innerHTML = '';
+  m.topics.forEach(function(t){ var s = document.createElement('span'); s.className='topic-tag'; s.textContent=t; tp.appendChild(s); });
+  el.classList.add('open');
+}
+function closeMentor() { document.getElementById('mentorModal').classList.remove('open'); }
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMentor(); });
+</script>
+
+<section class="cta-band">
+  <h2>Want to mentor with us?</h2>
+  <p>We're always looking for operators who want to give back. Get in touch.</p>
+  <a href="contact.html" class="cta">Become a Mentor</a>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">FIL ROUGE<span>.</span> CAPITAL</div>
+      <p style="font-size:14px;max-width:320px;">Early-stage investment fund manager backing bold founders at pre-seed, seed, and Series A.</p>
+      <p style="font-size:13px;margin-top:18px;line-height:1.7;">FRC Fund Management S.à.r.l.<br/>106, route d'Arlon<br/>L-8210 Mamer, Luxembourg<br/>VAT: LU31208046</p>
+    </div>
+    <div><h5>Company</h5><ul><li><a href="team.html">About Us</a></li><li><a href="manifesto.html">Manifesto</a></li><li><a href="mentors.html">Mentors</a></li><li><a href="blog.html">Press</a></li></ul></div>
+    <div><h5>Founders</h5><ul><li><a href="accelerate.html">Program</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pitch.html">Submit Pitch</a></li></ul></div>
+    <div><h5>Contact</h5><ul><li><a href="mailto:info@filrougecapital.com">info@filrougecapital.com</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+  </div>
+  <div class="foot-copy"><span>© 2026 Fil Rouge Capital — Mock website</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+</footer>
+
+</body>
+</html>

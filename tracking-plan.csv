@@ -1,0 +1,23 @@
+Event Name,Event Trigger Description,Event Parameter Name,Event Parameter Description,Event Parameter Value,Variable Type,Event Parameter Type
+mentor_clicked,"Sent when a user clicks on a mentor card on the Mentors page, opening the mentor detail modal.
+
+Test scenarios:
+1. When a user clicks a mentor card in the mentors grid.
+2. Should fire once per click (not on modal close).
+3. Should include the mentor's name, role and location.",mentor_name,Full name of the mentor that was clicked,Ana Kovač,string,event property
+,,mentor_role,Professional role / headline of the mentor,"Ex-VP Product, fintech scaleup",string,event property
+,,mentor_location,City and country of the mentor,"Vienna, Austria",string,event property
+,,mentor_position,Index of the mentor card in the list (0-based),0,number,event property
+,,page_section,Section of the page the click originated from,mentors_grid,string,event property
+portfolio_clicked,"Sent when a user clicks on a portfolio company card on the Portfolio page, navigating to the company detail page.
+
+Test scenarios:
+1. When a user clicks any portfolio company card.
+2. Should fire before navigation to the detail page.
+3. Should include company metadata available on the card.",company_name,Name of the portfolio company that was clicked,Lebesgue,string,event property
+,,sector,Primary sector / category of the company,AI,string,event property
+,,year_invested,Year FRC invested in the company,2020,number,event property
+,,founder,Name of the company's founder,Josip Begić,string,event property
+,,stage,Investment stage at time of investment,Seed,string,event property
+,,status,Current status of the company (active / exit),Exit,string,event property
+,,page_section,Section of the page the click originated from,portfolio_grid,string,event property

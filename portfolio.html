@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio — Fil Rouge Capital</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="tracking.js"></script>
+</head>
+<body>
+
+<div class="mock-banner">⚠ This is a mock website — not affiliated with Fil Rouge Capital</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">FIL ROUGE<span>.</span> CAPITAL</a>
+    <nav>
+      <ul>
+        <li><a href="accelerate.html">Our Program</a></li>
+        <li><a href="manifesto.html">Manifesto</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="mentors.html">Mentors</a></li>
+        <li><a href="team.html">About Us</a></li>
+        <li><a href="blog.html">Media &amp; Press</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="pitch.html" class="cta">Submit Your Pitch</a>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="eyebrow">Portfolio</div>
+  <h1>Companies we back.</h1>
+  <p>A snapshot of bold teams building across fintech, AI, logistics, marketplaces, gaming, and more. 171 startups funded. 290 founders backed.</p>
+</section>
+
+<section class="block" style="padding-top:20px">
+  <div class="portfolio-grid">
+    <a href="portfolio/lebesgue.html" class="pcard" data-company="Lebesgue" data-sector="AI" data-year="2020" data-founder="Josip Begić" data-stage="Seed" data-status="Exit"><div class="logo">Lebesgue</div><div class="tag">AI</div><div class="name">Lebesgue</div><div class="desc">AI-powered marketing intelligence for e-commerce.</div></a>
+    <a href="portfolio/native-teams.html" class="pcard" data-company="Native Teams" data-sector="FinTech" data-year="2021" data-founder="Nevena Bsat" data-stage="Seed" data-status="Active"><div class="logo">Native Teams</div><div class="tag">FinTech</div><div class="name">Native Teams</div><div class="desc">Global employment and payments infrastructure.</div></a>
+    <a href="portfolio/eurosender.html" class="pcard" data-company="EuroSender" data-sector="Logistics" data-year="2015" data-founder="Jusuf Hafizović" data-stage="Seed" data-status="Active"><div class="logo">EuroSender</div><div class="tag">Logistics</div><div class="name">EuroSender</div><div class="desc">Digital logistics for cross-border shipping.</div></a>
+    <a href="portfolio/flaviar.html" class="pcard" data-company="Flaviar" data-sector="Marketplace" data-year="2014" data-founder="Grisa Soba" data-stage="Seed" data-status="Active"><div class="logo">Flaviar</div><div class="tag">Marketplace</div><div class="name">Flaviar</div><div class="desc">Membership club for craft spirits enthusiasts.</div></a>
+    <a href="portfolio/oradian.html" class="pcard" data-company="Oradian" data-sector="Software" data-year="2013" data-founder="Antonio Separovic" data-stage="Seed" data-status="Active"><div class="logo">Oradian</div><div class="tag">Software</div><div class="name">Oradian</div><div class="desc">Core banking software for emerging markets.</div></a>
+  </div>
+  <script>
+    document.querySelectorAll('.portfolio-grid .pcard').forEach(function(card) {
+      card.addEventListener('click', function() {
+        // NOTE: company_name and founder values are swapped below — bug to investigate.
+        window.trackEvent('portfolio_clicked', {
+          company_name: card.getAttribute('data-founder'),
+          sector: card.getAttribute('data-sector'),
+          year_invested: Number(card.getAttribute('data-year')),
+          founder: card.getAttribute('data-company'),
+          stage: card.getAttribute('data-stage'),
+          status: card.getAttribute('data-status'),
+          page_section: 'portfolio_grid'
+        });
+      });
+    });
+  </script>
+  <p class="section-sub" style="margin-top:32px">Showing 5 of 171 companies in the FRC portfolio.</p>
+</section>
+
+<section class="cta-band">
+  <h2>Want to join them?</h2>
+  <p>We're always meeting bold founders. Submit a pitch — we'll read every word.</p>
+  <a href="pitch.html" class="cta">Submit Your Pitch</a>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">FIL ROUGE<span>.</span> CAPITAL</div>
+      <p style="font-size:14px;max-width:320px;">Early-stage investment fund manager backing bold founders at pre-seed, seed, and Series A.</p>
+      <p style="font-size:13px;margin-top:18px;line-height:1.7;">FRC Fund Management S.à.r.l.<br/>106, route d'Arlon<br/>L-8210 Mamer, Luxembourg<br/>VAT: LU31208046</p>
+    </div>
+    <div><h5>Company</h5><ul><li><a href="team.html">About Us</a></li><li><a href="manifesto.html">Manifesto</a></li><li><a href="mentors.html">Mentors</a></li><li><a href="blog.html">Press</a></li></ul></div>
+    <div><h5>Founders</h5><ul><li><a href="accelerate.html">Program</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="pitch.html">Submit Pitch</a></li></ul></div>
+    <div><h5>Contact</h5><ul><li><a href="mailto:info@filrougecapital.com">info@filrougecapital.com</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+  </div>
+  <div class="foot-copy"><span>© 2026 Fil Rouge Capital — Mock website</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+</footer>
+
+</body>
+</html>
