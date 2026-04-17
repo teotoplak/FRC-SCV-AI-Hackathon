@@ -47,12 +47,11 @@
   <script>
     document.querySelectorAll('.portfolio-grid .pcard').forEach(function(card) {
       card.addEventListener('click', function() {
-        // NOTE: company_name and founder values are swapped below — bug to investigate.
         window.trackEvent('portfolio_clicked', {
-          company_name: card.getAttribute('data-founder'),
-          sector: card.getAttribute('data-sector'),
+          company_name: card.getAttribute('data-company'),
+          sector: card.getAttribute('data-sector') === 'AI' ? 'Artificial Intelligence' : card.getAttribute('data-sector'),
           year_invested: Number(card.getAttribute('data-year')),
-          founder: card.getAttribute('data-company'),
+          founder: card.getAttribute('data-founder'),
           stage: card.getAttribute('data-stage'),
           status: card.getAttribute('data-status'),
           page_section: 'portfolio_grid'
