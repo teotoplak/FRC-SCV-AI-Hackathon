@@ -47,11 +47,16 @@
   <script>
     document.querySelectorAll('.portfolio-grid .pcard').forEach(function(card) {
       card.addEventListener('click', function() {
+        var now = Date.now();
+        var lastTrackedAt = Number(card.dataset.portfolioClickTrackedAt || 0);
+        if (now - lastTrackedAt < 1000) return;
+        card.dataset.portfolioClickTrackedAt = String(now);
+
         window.trackEvent('portfolio_clicked', {
-          company_name: card.getAttribute('data-founder'),
+          company_name: card.getAttribute('data-company'),
           sector: card.getAttribute('data-sector'),
           year_invested: Number(card.getAttribute('data-year')),
-          founder: card.getAttribute('data-company'),
+          founder: card.getAttribute('data-founder'),
           stage: card.getAttribute('data-stage'),
           status: card.getAttribute('data-status'),
           page_section: 'portfolio_grid'
