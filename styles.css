@@ -13,7 +13,7 @@ img { max-width: 100%; display: block; }
 /* Mock banner */
 .mock-banner {
   position: sticky; top: 0; z-index: 1000;
-  width: 100%; background: #000; color: #fff;
+  width: 100%; background: #ff6600; color: #fff;
   text-align: center; font-size: 12px;
   padding: 4px 12px; letter-spacing: .08em; text-transform: uppercase;
 }
